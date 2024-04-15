@@ -22,6 +22,9 @@ explorer.exe $oldFormat # this version opens the right directory
 # works 
 ```
 
+![long paths screenshot](./screenshot.png)
+
+
 ## See more: Related Docs
 
 - [Unicode skip MAX_PATH limitations](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later)
