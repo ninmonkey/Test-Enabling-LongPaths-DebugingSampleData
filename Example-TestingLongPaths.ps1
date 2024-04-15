@@ -97,6 +97,9 @@ but this works!
 $LongOldSyntax = 'G:\temp\LONGPA~1\stuff\AAAAAA~1\BBBBBB~1\CCCCCC~1\DDDDDD~1\EEEEEE~1\FFFFFF~1'
 [Environment]::CurrentDirectory = 'G:\temp\LONGPA~1\stuff\AAAAAA~1'
 
+(gi $scarySquaredPathFolder).FullName -split '\\'
+    | Join-String -sep ', ' { $_.Length }
+    | Join-string -f 'Segment lengths: {0}, equals: ' -os (gi $scarySquaredPathFolder).FullName.Length
 
 ' # this worked
 > [Environment]::CurrentDirectory =  $LongOldSyntax
@@ -120,4 +123,3 @@ I wonder if `32,767 characters` is number of chars, or codepoints? Probably the 
 > path is composed of components separated by backslashes, each up to the value returned in the lpMaximumComponentLength parameter of the GetVolumeInformation function (this value is commonly 255 characters)
 
 '@
-
